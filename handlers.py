@@ -7,12 +7,11 @@ def calc_code(x, y):
         code |= c.LEFT
     elif x > c.X_MAX:
         code |= c.RIGHT
-    elif y < c.Y_MIN:
+    if y < c.Y_MIN:
         code |= c.BOTTOM
     elif y > c.Y_MAX:
         code |= c.TOP
     return code
-
 
 def cohen_sutherland(x1: int, y1: int, x2: int, y2: int):
     code1 = calc_code(x1, y1)
